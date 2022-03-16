@@ -16,7 +16,7 @@ export default {
 
 <style>
 
-html,body{
+html,body,head{
   margin:0;
   padding:0;
 }

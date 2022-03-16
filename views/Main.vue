@@ -1,13 +1,20 @@
 <template>
   <el-container style="height: 100%">
+
     <el-aside width="auto">
        <common-aside></common-aside>
     </el-aside>
+
     <el-container>
-      <el-header>Header</el-header>
+
+      <el-header>
+        <common-header></common-header>
+      </el-header>
+
       <el-main>
         <router-view></router-view>
       </el-main>
+
     </el-container>
   </el-container>
 
@@ -16,12 +23,13 @@
 <script>
 
 import CommonAside from "@/components/CommonAside";
-
+import CommonHeader from "@/components/CommonHeader";
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Main",
   components:{
-    CommonAside
+    CommonAside,
+    CommonHeader
   },
   data(){
     return {}
