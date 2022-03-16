@@ -1,10 +1,9 @@
 <template>
  <header>
 
-
    <div class="l-content">
      <div class="grid-content bg-purple" style="text-align: center">
-       <el-button plain icon="el-icon-menu" size="mini" style="margin-top: 10%">
+       <el-button @click="handerMenu()" plain icon="el-icon-menu" size="mini" style="margin-top: 10%">
        </el-button>
      </div>
      <h3  style="color: #fff">首页</h3>
@@ -16,13 +15,11 @@
               <img class="user" :src="userImage">
             </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="a">黄金糕</el-dropdown-item>
-          <el-dropdown-item command="d" disabled>双皮奶</el-dropdown-item>
-          <el-dropdown-item command="e" divided>蚵仔煎</el-dropdown-item>
+          <el-dropdown-item command="a">设置</el-dropdown-item>
+          <el-dropdown-item command="e" divided>退出</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
-
 
  </header>
 </template>
@@ -32,7 +29,12 @@ export default {
   name: "CommonHeader",
   data(){
     return{
-      userImage: require('../assets/images/user.png')
+      userImage: require('../assets/images/zxq.jpg')
+    }
+  },
+  methods:{
+    handerMenu(){
+      this.$store.commit("collapseMenu")
     }
   }
 }
