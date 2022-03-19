@@ -9,11 +9,10 @@ class HttpRequest{
         this.baseUrl = baseUrl
     }
     getInsideConfig(){
-        const config = {
-            baseUrl : this.baseUrl,
-            header : {}
+        return {
+            baseUrl: this.baseUrl,
+            header: {}
         }
-        return config
     }
     interceptors (instance){
         // 添加请求拦截器
