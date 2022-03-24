@@ -1,11 +1,11 @@
 import axios from "./axios";
 
 
-export  const getMenu = (parrm) => {
+export  const getMenu = (param) => {
     return axios.request({
         url:'/permission/getMenu',
         method:'post',
-        data: parrm
+        data: param
     })
 }
 

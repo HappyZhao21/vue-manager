@@ -9,8 +9,9 @@ import store from './store'
 import http from 'axios'
 import './api/mock'
 
-
+//阻止启动生产消息，常用作指令
 Vue.config.productionTip = false
+
 Vue.use(ElementUI)
 
 Vue.prototype.$http = http
