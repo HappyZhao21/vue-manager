@@ -18,7 +18,7 @@
 
       <el-menu-item-group v-for="(child,index) in item.children" :index="child.path" :key="child.path">
 
-        <el-menu-item :index="index+''"  :key="child.path">
+        <el-menu-item @click="clickMenu(child)" :index="index+''"  :key="child.path">
           <i :class="'el-icon-' + child.icon"></i>
           <span slot="title">{{ child.label }}</span>
         </el-menu-item>
@@ -48,6 +48,11 @@
 
 <script>
 export default {
+  mounted() {
+    this.$router.push({
+      name: "home"
+    })
+  },
   data() {
     return {
       menu: [
