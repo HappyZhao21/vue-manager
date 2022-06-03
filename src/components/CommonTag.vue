@@ -38,6 +38,7 @@ export default{
       this.$router.push({name:item.name})
     },
     handleClose(tag,index){
+      console.log("index:{}",index)
       const length=this.tags.length - 1
       this.close(tag)
       if(tag.name !==this.$route.name){

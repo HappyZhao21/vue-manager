@@ -34,7 +34,6 @@ export default {
 
   methods: {
     initCharts(){
-      console.log(this.chartData,"chartdata")
       this.initChartData()
       if (this.echart){
         this.echart.setOption(this.options)

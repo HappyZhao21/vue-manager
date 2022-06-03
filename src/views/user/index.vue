@@ -1,16 +1,12 @@
 <template>
-  <div>
-    user pages
-  </div>
+    <div>
+      hello this is user pages !!1
+    </div>
 </template>
 
 <script>
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "user",
-  data () {
-    return {}
-  }
+  name: "user"
 }
 </script>
 

@@ -195,7 +195,6 @@ export default {
     getData().then(res=>{
       const {code,data}  = res.data
       if (code === 20000){
-        console.log(data,"-------chartdata-------")
         this.tableData = data.tableData
         const order = data.orderData
         //折线图x轴数据
