@@ -42,7 +42,7 @@ export default{
         inline:Boolean
     },
     data(){
-
+       return {}
     }
 }
 </script>
