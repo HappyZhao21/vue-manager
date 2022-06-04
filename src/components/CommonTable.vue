@@ -1,19 +1,28 @@
 <template>
     <div class="common-table">
-        <el-table :data="tableData" height="700" stripe>
+        <el-table :data="tableData" style="width:100%" height="90%" stripe>
+            <el-table-column
+                width="100"
+                type="index"
+                label="序列"
+                :index="indexMethod"
+                align="center"
+            >
+            </el-table-column>
             <el-table-column 
             show-overflow-tooltip
             v-for="item in tableLabel"
             :key="item.prop"
             :label="item.label"
             :width="item.width ? item.width : 125"
+            align="center"
             >
             <template slot-scope="scope">
                 <span style="margin-left:10px">{{scope.row[item.prop]}}</span>
             </template>
             </el-table-column>
 
-            <el-table-column label="操作" min-width="180">
+            <el-table-column label="操作" min-width="180" align="center">
 
                 <template slot-scope="scope">
                      <el-button size="mini" @click="handleEdit(scope.row)">编辑</el-button>
@@ -28,7 +37,7 @@
           :total="config.total"
           :current-page.sync="config.page"
           @current-change="changePage"
-          page-size="20"
+          :page-size="20"
         >
         </el-pagination>
     </div>
@@ -53,15 +62,17 @@ export default{
         },
         changePage(page){
             this.$emit('changePage',page)
-        }
-
+        },
+      indexMethod(index) {
+        return (index * 1)+1;
+      }
     }
 }
 
 </script>
 <style lang="less" scoped>
 .common-table{
-    height: calc(100%-62px);
+    height: calc(100% - 62px);
     // 小bug 窗口大小有问题
     background-color: #fff;
     position: relative;
